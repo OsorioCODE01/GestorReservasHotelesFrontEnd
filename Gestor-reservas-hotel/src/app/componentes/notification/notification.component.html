@@ -1,0 +1,6 @@
+<div class="notification-card" *ngIf="showNotification" [ngClass]="color">
+  <span>{{ message }}</span>
+  <button mat-icon-button (click)="hideNotification()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>

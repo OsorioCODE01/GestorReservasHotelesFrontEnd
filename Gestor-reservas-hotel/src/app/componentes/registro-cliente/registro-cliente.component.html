@@ -1,0 +1,76 @@
+<div class="registro-container">
+  <mat-card class="formulario-card">
+    <div class="titulo-registro">
+      <h1 class="text-center">Registro Cliente</h1>
+    </div>
+    <form
+      [formGroup]="FormCliente"
+      (ngSubmit)="RegistrarCliente()"
+      class="RegistroCliente"
+    >
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="w-100">
+            <mat-label>Num Documento</mat-label>
+            <input type="number" matInput formControlName="idCliente" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <!-- Utilizamos mat-select para el campo "Tipo documento" -->
+          <mat-form-field class="w-100">
+            <mat-label>Tipo documento</mat-label>
+            <mat-select formControlName="tipoDocumento">
+              <mat-option value="CC">CC</mat-option>
+              <mat-option value="TI">TI</mat-option>
+              <mat-option value="CE">CE</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Resto de los campos del formulario -->
+        <div class="col-md-6">
+          <mat-form-field class="w-100">
+            <mat-label>Nombre completo</mat-label>
+            <input type="text" matInput formControlName="nombre" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100">
+            <mat-label>telefono</mat-label>
+            <input type="text" matInput formControlName="telefono" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="w-100">
+            <mat-label>Correo</mat-label>
+            <input type="text" matInput formControlName="correo" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100">
+            <mat-label>Contraseña</mat-label>
+            <input type="text" matInput formControlName="contrasena" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="FormCliente.invalid"
+        >
+          Registrar Cliente
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="registroExitoso" class="exito-mensaje text-center mt-3">
+      Registro Exitoso.
+    </div>
+  </mat-card>
+</div>
