@@ -32,6 +32,7 @@ import { EditarReservaComponent } from './components/editar-reserva/editar-reser
 import { RegistroHotelComponent } from './components/registro-hotel/registro-hotel.component';
 import { AddHabitacionComponent } from './components/add-habitacion/add-habitacion.component';
 import { EditarHotelComponent } from './components/editar-hotel/editar-hotel.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { EditarHotelComponent } from './components/editar-hotel/editar-hotel.com
     RegistroHotelComponent,
     AddHabitacionComponent,
     EditarHotelComponent,
+    ContactoComponent,
   ],
   imports: [
     MatToolbarModule,

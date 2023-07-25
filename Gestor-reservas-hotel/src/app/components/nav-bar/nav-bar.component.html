@@ -2,13 +2,16 @@
   <!-- Logo -->
   <div class="logo-container">
     <img src="https://i.imgur.com/F8C0m7G.png" alt="Logo" class="logo" />
-    <h1 class="logo-text">GESTOR DE RESERVAS</h1>
+
+    <h1 [routerLink]="['/inicio']" class="logo-text">GESTOR DE RESERVAS</h1>
   </div>
 
   <div class="nav-buttons" *ngIf="isLoggedIn == true">
     <button mat-button routerLink="/inicio">INICIO</button>
     <button mat-button routerLink="/nueva-reserva">NUEVA RESERVA</button>
     <button mat-button routerLink="/ver-reservas-user">MIS RESERVAS</button>
+  </div>
+  <div class="nav-buttons">
     <button mat-button routerLink="/contacto">CONTACTO</button>
   </div>
   <div *ngIf="isAdmin" class="nav-buttons">

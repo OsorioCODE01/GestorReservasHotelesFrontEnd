@@ -1,0 +1,41 @@
+.full-page-container {
+  height: 100%;
+  background-color: #ffffff;
+  background-image: linear-gradient(to right top, #c24343, #00aeff);
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  max-width: 600px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff8c;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.col-md-6 {
+  width: 45%;
+}
+
+.mat-form-field {
+  width: 100%;
+}

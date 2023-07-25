@@ -1,8 +1,17 @@
-<p>inicio works!</p>
-
-<h2>INCIO</h2>
-
-<button *ngIf="isAdmin">Es ADMIN!</button>
-<button *ngIf="!isAdmin">No es ADMIN!</button>
-<button (click)="logout()" [routerLink]="['/login']">Cerrar sesion</button>
-<button [routerLink]="['/registro-cliente']">registro-cliente</button>
+<div class="full-page-container">
+  <div class="intro-container">
+    <div class="intro-content">
+      <h1 class="intro-title">
+        Bienvenido al Sistema Gestor de Reservas de Hoteles
+      </h1>
+      <p class="intro-description">
+        Con nuestro sistema, puedes gestionar de manera eficiente las reservas
+        en diferentes hoteles y brindar una experiencia excepcional a tus
+        clientes.
+      </p>
+      <button class="intro-button" [routerLink]="['/login']">
+        Iniciar Sesión
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+.full-page-container {
+  height: 200%;
+  background-color: #ffffff;
+  background-image: linear-gradient(to right top, #c24343, #00aeff);
+  display: flex;
+}
+
+/* Estilos generales para la página */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilos para las tarjetas de hoteles */
+.hotel-card {
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #ffffff93;
+  transition: box-shadow 0.3s;
+}
+
+.hotel-card:hover {
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 1);
+}
+
+.hotel-card h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.hotel-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.hotel-info-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.hotel-info-value {
+  color: #292929;
+}
+
+/* Estilos para el botón "Ver Detalles" y "Borrar" */
+.ver-mas-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.ver-mas-button button {
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* Estilos para la tarjeta "Añadir Hotel" */
+.add-hotel-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #28a745;
+  transition: box-shadow 0.3s;
+}
+
+.add-hotel-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.add-hotel-card button {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-hotel-card button:hover {
+  background-color: #1f8135;
+}
+
+.add-hotel-card mat-icon {
+  font-size: 24px;
+  color: #fff;
+  margin-left: 10px;
+}
+
+h4 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -100px;
+}
+
+hr {
+  border: 3px solid #fff;
+}

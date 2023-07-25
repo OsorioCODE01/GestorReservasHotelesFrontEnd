@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
       return true; // Permite el acceso a la ruta protegida si el usuario ha iniciado sesión
     } else {
       // Redirige al usuario a la página de inicio de sesión si no ha iniciado sesión
-      this.router.navigate(['/login']);
+      this.router.navigate(['/inicio']);
       return false;
     }
   }
