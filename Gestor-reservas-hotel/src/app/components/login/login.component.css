@@ -1,0 +1,42 @@
+.full-page-container {
+  height: 100%;
+  background-color: #ffffff;
+  background-image: linear-gradient(to right top, #c24343, #00aeff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para la tarjeta de inicio de sesión */
+.login-card {
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff7e;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Estilos para el contenedor del botón de registrarse */
+.register-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Agrega estilos para el enlace de registrarse */
+.text-center a {
+  color: #0077ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}
+
+.user-logo {
+  max-width: 150px;
+  border-radius: 50%;
+}

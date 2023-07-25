@@ -1,0 +1,44 @@
+<mat-toolbar class="navbar navbar-dark bg-dark">
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="https://i.imgur.com/F8C0m7G.png" alt="Logo" class="logo" />
+    <h1 class="logo-text">GESTOR DE RESERVAS</h1>
+  </div>
+
+  <div class="nav-buttons" *ngIf="isLoggedIn == true">
+    <button mat-button routerLink="/inicio">INICIO</button>
+    <button mat-button routerLink="/nueva-reserva">NUEVA RESERVA</button>
+    <button mat-button routerLink="/ver-reservas-user">MIS RESERVAS</button>
+    <button mat-button routerLink="/contacto">CONTACTO</button>
+  </div>
+  <div *ngIf="isAdmin" class="nav-buttons">
+    <button mat-button [matMenuTriggerFor]="userMenu">ADMINISTRACIÓN</button>
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item routerLink="/consulta-hoteles">
+        Consultar Hoteles
+      </button>
+      <button mat-menu-item routerLink="/consulta-reservas">
+        Consultar Reservas
+      </button>
+      <button mat-menu-item routerLink="/consulta-clientes">
+        Consultar Clientes
+      </button>
+      <button mat-menu-item routerLink="/registro-hotel">Nuevo Hotel</button>
+    </mat-menu>
+  </div>
+
+  <div *ngIf="!isLoggedIn" class="nav-buttons">
+    <button mat-raised-button routerLink="/login">INICIAR SESIÓN</button>
+  </div>
+  <div *ngIf="isLoggedIn" class="nav-buttons">
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item routerLink="/perfil">MI PERFIL</button>
+      <button mat-menu-item (click)="onLogout()" [routerLink]="['/login']">
+        CERRAR SESIÓN
+      </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="userMenu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

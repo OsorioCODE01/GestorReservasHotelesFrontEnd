@@ -14,21 +14,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { LoginComponent } from './componentes/login/login.component';
-import { InicioComponent } from './componentes/inicio/inicio.component';
-import { RegistroClienteComponent } from './componentes/registro-cliente/registro-cliente.component';
-import { NotificationComponent } from './componentes/notification/notification.component';
-import { AccesoDenegadoComponent } from './componentes/acceso-denegado/acceso-denegado.component';
-import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
-import { ConsultaHotelesComponent } from './componentes/consulta-hoteles/consulta-hoteles.component';
-import { ConsultaClientesComponent } from './componentes/consulta-clientes/consulta-clientes.component';
-import { ConsultaReservasComponent } from './componentes/consulta-reservas/consulta-reservas.component';
-import { NuevaReservaComponent } from './componentes/nueva-reserva/nueva-reserva.component';
-import { PerfilComponent } from './componentes/perfil/perfil.component';
-import { EditarPerfilComponent } from './componentes/editar-perfil/editar-perfil.component';
-import { VerReservaComponent } from './componentes/ver-reserva/ver-reserva.component';
-import { VerReservasUserComponent } from './componentes/ver-reservas-user/ver-reservas-user.component';
-import { EditarReservaComponent } from './componentes/editar-reserva/editar-reserva.component';
+import { LoginComponent } from './components/login/login.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { RegistroClienteComponent } from './components/registro-cliente/registro-cliente.component';
+import { NotificationComponent } from './components/notification/notification.component';
+import { AccesoDenegadoComponent } from './components/acceso-denegado/acceso-denegado.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ConsultaHotelesComponent } from './components/consulta-hoteles/consulta-hoteles.component';
+import { ConsultaClientesComponent } from './components/consulta-clientes/consulta-clientes.component';
+import { ConsultaReservasComponent } from './components/consulta-reservas/consulta-reservas.component';
+import { NuevaReservaComponent } from './components/nueva-reserva/nueva-reserva.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
+import { VerReservaComponent } from './components/ver-reserva/ver-reserva.component';
+import { VerReservasUserComponent } from './components/ver-reservas-user/ver-reservas-user.component';
+import { EditarReservaComponent } from './components/editar-reserva/editar-reserva.component';
+import { RegistroHotelComponent } from './components/registro-hotel/registro-hotel.component';
+import { AddHabitacionComponent } from './components/add-habitacion/add-habitacion.component';
+import { EditarHotelComponent } from './components/editar-hotel/editar-hotel.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { EditarReservaComponent } from './componentes/editar-reserva/editar-rese
     VerReservaComponent,
     VerReservasUserComponent,
     EditarReservaComponent,
+    RegistroHotelComponent,
+    AddHabitacionComponent,
+    EditarHotelComponent,
   ],
   imports: [
     MatToolbarModule,

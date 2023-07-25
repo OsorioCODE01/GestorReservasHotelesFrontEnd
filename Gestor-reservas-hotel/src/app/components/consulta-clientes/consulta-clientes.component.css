@@ -1,0 +1,12 @@
+.boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-page-container {
+  height: 100%;
+  background-color: #ffffff;
+  background-image: linear-gradient(to right top, #c24343, #00aeff);
+  display: flex;
+}

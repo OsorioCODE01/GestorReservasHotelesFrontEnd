@@ -1,0 +1,49 @@
+.full-page-container {
+  background-color: #ffffff;
+  background-image: linear-gradient(to right top, #c24343, #00aeff);
+  display: flex;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para la tarjeta de registro de hotel */
+.login-card {
+  width: 550px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 150px;
+  background-color: #ffffff86;
+}
+
+/* Estilos para el formulario */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: -60px;
+}
+
+/* Estilos para los campos del formulario */
+.form-group {
+  width: 48%;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el botón */
+.w-100 {
+  text-align: center;
+  margin-left: -30px;
+}
+
+/* Estilos para el título */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}

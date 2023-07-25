@@ -1,0 +1,52 @@
+<div class="full-page-container">
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Columna izquierda con el formulario de registro -->
+      <div class="col-md-6">
+        <mat-card class="login-card">
+          <h2 class="text-center mb-4">REGISTRAR HOTEL</h2>
+          <form [formGroup]="FormHotel" (ngSubmit)="RegistrarHotel()">
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>ID Hotel</mat-label>
+                <input type="number" matInput formControlName="idHotel" />
+              </mat-form-field>
+            </div>
+
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input type="text" matInput formControlName="nombre" />
+              </mat-form-field>
+            </div>
+
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>Teléfono</mat-label>
+                <input type="text" matInput formControlName="telefono" />
+              </mat-form-field>
+            </div>
+
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>Correo</mat-label>
+                <input type="text" matInput formControlName="correo" />
+              </mat-form-field>
+            </div>
+
+            <div class="w-100 text-center mt-4 boton">
+              <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                [disabled]="FormHotel.invalid"
+              >
+                Registrar Hotel
+              </button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
