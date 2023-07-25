@@ -1,0 +1,76 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+/* Estilos para el contenedor principal */
+.contact-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Estilos para la tarjeta de información de contacto */
+.contact-info-card {
+  text-align: center;
+  width: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #ffffff7e;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la imagen de perfil */
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el nombre del creador */
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilos para el rol del creador */
+.role {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los detalles de contacto */
+.contact-details {
+  text-align: left;
+}
+
+.contact-item {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.full-page-container {
+  height: 100%;
+  background-color: #ffffff;
+  background-image: linear-gradient(to right top, #c24343, #00aeff);
+  display: flex;
+  justify-content: center;
+}

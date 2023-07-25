@@ -1,0 +1,61 @@
+<div class="full-page-container">
+  <div class="container mt-5" style="padding-top: 5%">
+    <div class="row">
+      <h4>HOTELES</h4>
+      <hr />
+      <div class="col-md-4" *ngFor="let hotel of Hoteles">
+        <mat-card class="hotel-card">
+          <h2 class="text-center mb-4">{{ hotel.nombre }}</h2>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">ID HOTEL:</span>
+            <span class="hotel-info-value">{{ hotel.idHotel }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">TELÉFONO:</span>
+            <span class="hotel-info-value">{{ hotel.telefono }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">CORREO: </span>
+            <span class="hotel-info-value">{{ hotel.correo }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">NÚMERO DE HABITACIONES:</span>
+            <span class="hotel-info-value">{{
+              hotel.habitaciones.length
+            }}</span>
+          </div>
+          <!-- Puedes agregar más información del hotel aquí según tus necesidades -->
+
+          <div class="ver-mas-button">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="verDetallesHotel(hotel)"
+            >
+              Ver Detalles
+            </button>
+            <button
+              mat-raised-button
+              color="warn"
+              (click)="BorrarHotel(hotel.idHotel)"
+            >
+              Borrar
+            </button>
+          </div>
+        </mat-card>
+      </div>
+      <div class="col-md-4">
+        <mat-card class="hotel-card add-hotel-card">
+          <button
+            mat-raised-button
+            color="primary"
+            [routerLink]="['/registro-hotel']"
+          >
+            <span>Añadir Hotel</span>
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

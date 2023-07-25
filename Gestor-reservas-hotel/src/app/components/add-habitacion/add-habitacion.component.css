@@ -1,0 +1,80 @@
+.full-page-container {
+  height: 100%;
+  background-color: #ffffff;
+  background-image: linear-gradient(to right top, #c24343, #00aeff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.habitaciones-card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-info-card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f7f7f798;
+}
+
+.habitaciones-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.habitaciones-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.habitacion-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.disponible {
+  background-color: rgb(119, 250, 119);
+}
+
+.no-disponible {
+  background-color: lightcoral;
+}
+
+.habitacion-num {
+  margin-right: 5px;
+}
+
+.hotel-info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.hotel-info-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.hotel-info-value {
+  color: #3b3b3b;
+}
+
+.boton {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.Header-Place {
+  display: flex;
+  justify-content: space-between;
+}

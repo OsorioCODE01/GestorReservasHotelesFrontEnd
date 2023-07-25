@@ -1,0 +1,72 @@
+.full-page-container {
+  height: 100%;
+  background-color: #ffffff;
+  background-image: linear-gradient(to right top, #c24343, #00aeff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para la tarjeta de información del usuario */
+.user-info-card {
+  margin-bottom: 100px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #f4f4f479;
+}
+
+.user-info-header {
+  color: #990000;
+}
+
+.user-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-info-label {
+  font-weight: bold;
+  color: #000000;
+}
+
+.user-info-value {
+  color: #333;
+}
+
+/* Estilos para el campo de nivel */
+.admin-level {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.user-level {
+  color: #bd0618;
+  font-weight: bold;
+}
+
+/* Estilos para el contenedor del botón Editar */
+.edit-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Estilos para el botón de "Editar" */
+.edit-button {
+  background-color: #0044ff79;
+  color: #dfdfdf;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}

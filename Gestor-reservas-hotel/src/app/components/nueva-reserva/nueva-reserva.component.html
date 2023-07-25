@@ -1,0 +1,60 @@
+<div class="full-page-container">
+  <div class="container">
+    <div class="card">
+      <h2 class="text-center">Nueva Reserva</h2>
+      <form [formGroup]="ReservaForm" (ngSubmit)="RegistrarReserva()">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="w-100">
+              <mat-label>Fecha de Inicio</mat-label>
+              <input
+                matInput
+                type="date"
+                formControlName="fechaInicio"
+                required
+              />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="w-100">
+              <mat-label>Fecha de Fin</mat-label>
+              <input matInput type="date" formControlName="fechaFin" required />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="w-100">
+            <mat-label>Hoteles Disponibles</mat-label>
+            <mat-select formControlName="idHotel" required>
+              <mat-option
+                *ngFor="let hotel of HotelesDisponibles"
+                [value]="hotel"
+              >
+                {{ hotel.nombre }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="text-center">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="ReservaForm.invalid"
+          >
+            Registrar Reserva
+          </button>
+        </div>
+      </form>
+      <div>
+        <button
+          mat-raised-button
+          color="accent"
+          [routerLink]="['/ver-reservas-user']"
+        >
+          Volver
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.registro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  background-image: linear-gradient(to right top, #c24343, #00aeff);
+}
+
+.titulo-registro {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formulario-card {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f985;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.RegistroCliente {
+  width: 100%;
+}
+
+/* Agregamos estilos para utilizar flexbox */
+.RegistroCliente .row {
+  display: flex;
+  justify-content: space-between; /* Distribuimos los campos en cada fila */
+  margin-bottom: 20px; /* Agregamos un margen entre las filas */
+}
+
+.RegistroCliente .col-md-6 {
+  width: 45%; /* Ancho del 45% para cada campo */
+}

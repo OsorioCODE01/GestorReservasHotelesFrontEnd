@@ -1,0 +1,42 @@
+.full-page-container {
+  height: 100%;
+  background-color: #ffffff;
+  background-image: linear-gradient(to right top, #c24343, #00aeff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para centrar el formulario en la pantalla */
+.container {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos para el formulario */
+.edit-profile-card {
+  max-width: auto;
+  padding: 30px;
+  margin: 0 auto;
+  background-color: #ffffff8a;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Estilos para los campos en dos columnas */
+.row {
+  display: flex;
+}
+
+.col-md-6 {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Estilos para el botón de volver */
+button[routerLink] {
+  margin-right: 10px;
+}

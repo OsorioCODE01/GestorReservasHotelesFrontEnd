@@ -1,0 +1,63 @@
+<div class="full-page-container">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <mat-card>
+          <h2 class="text-center mb-4">Lista de Clientes</h2>
+          <table class="table table-striped" style="max-width: auto">
+            <thead>
+              <tr>
+                <th>Num Documento</th>
+                <th>Tipo Documento</th>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>ADMIN</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let elemento of clientes">
+                <td>{{ elemento.idCliente }}</td>
+                <td>{{ elemento.tipoDocumento }}</td>
+                <td>{{ elemento.nombre }}</td>
+                <td>{{ elemento.telefono }}</td>
+                <td>{{ elemento.correo }}</td>
+                <td>{{ elemento.nivel }}</td>
+                <td>
+                  <div class="boton">
+                    <button
+                      mat-icon-button
+                      color="primary"
+                      [routerLink]="['/editar-perfil']"
+                      [queryParams]="{ idCliente: elemento.idCliente }"
+                    >
+                      <mat-icon>create</mat-icon>
+                    </button>
+                    <button
+                      mat-icon-button
+                      (click)="eliminarCliente(elemento.idCliente)"
+                      color="warn"
+                    >
+                      <mat-icon>delete_forever</mat-icon>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card>
+      </div>
+      <div class="boton">
+        <button
+          [routerLink]="['/registro-cliente']"
+          mat-raised-button
+          color="primary"
+        >
+          Añadir Cliente
+          <mat-icon>add_box</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

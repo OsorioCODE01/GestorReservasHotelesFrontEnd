@@ -1,0 +1,180 @@
+<div class="full-page-container">
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Lateral Izquierdo -->
+      <div class="col-md-6">
+        <div class="card card-info">
+          <h2 class="page-title">Editar Reserva</h2>
+          <form [formGroup]="ReservaForm">
+            <div class="card-body">
+              <!-- Información Básica de la Reserva -->
+              <hr />
+              <div class="reserva-info-item">
+                <span class="reserva-info-label">Titular de la reserva:</span>
+                <span class="reserva-info-value">{{
+                  ReservaInfo.idCliente.nombre
+                }}</span>
+              </div>
+              <div class="reserva-info-item">
+                <span class="reserva-info-label">Num Documumento:</span>
+                <span class="reserva-info-value"
+                  >{{ ReservaInfo.idCliente.idCliente }}
+                </span>
+                <span class="reserva-info-label">Tipo Documumento:</span>
+                <span class="reserva-info-value"
+                  >{{ ReservaInfo.idCliente.tipoDocumento }}
+                </span>
+              </div>
+
+              <div class="reserva-info-item">
+                <span class="reserva-info-label">Hotel de la reserva:</span>
+                <span class="reserva-info-value">{{
+                  ReservaInfo.idHotel.nombre
+                }}</span>
+              </div>
+              <div class="reserva-info-item">
+                <span class="reserva-info-label">Codigo del hotel:</span>
+                <span class="reserva-info-value">{{
+                  ReservaInfo.idHotel.idHotel
+                }}</span>
+              </div>
+              <div class="reserva-info-item">
+                <span class="reserva-info-label">Telefono Hotel:</span>
+                <span class="reserva-info-value">{{
+                  ReservaInfo.idHotel.telefono
+                }}</span>
+              </div>
+              <div class="reserva-info-item">
+                <span class="reserva-info-label">Correo Hotel:</span>
+                <span class="reserva-info-value">{{
+                  ReservaInfo.idHotel.correo
+                }}</span>
+              </div>
+              <hr />
+
+              <div class="form-group">
+                <label class="reserva-info-label-c"
+                  >FECHAS DE LA RESERVA:</label
+                >
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="fechaInicio" class="reserva-info-label-c"
+                    >FECHA DE INICIO:
+                  </label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="fechaInicio"
+                    formControlName="fechaInicio"
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="fechaFin" class="reserva-info-label-c">
+                    FECHA DE FINALIZACIÓN:
+                  </label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="fechaFin"
+                    formControlName="fechaFin"
+                  />
+                </div>
+              </div>
+              <div class="text-center mb-3">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="save-button"
+                  (click)="actualizarReserva()"
+                >
+                  Actualizar Fechas
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <h4 class="titular">Huéspedes de la reserva:</h4>
+        <hr />
+        <div class="card card-scrollable">
+          <div *ngFor="let cliente of ReservaInfo.clientes">
+            <div class="card mb-2" *ngIf="clienteEnReserva(cliente.idCliente)">
+              <div class="card-body d-flex justify-content-between cardThing">
+                <span>{{ cliente.nombre }} ({{ cliente.idCliente }})</span>
+                <button
+                  mat-icon-button
+                  color="warn"
+                  (click)="quitarCliente(cliente.idCliente)"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h4 class="titular">Habitaciones Reservadas:</h4>
+        <hr />
+        <div class="card card-scrollable">
+          <div *ngFor="let habitacion of ReservaInfo.habitaciones">
+            <div class="card mb-2">
+              <div class="card-body d-flex justify-content-between cardThing">
+                <span> Habitación: {{ habitacion.numHabitacion }}</span>
+                <button
+                  mat-icon-button
+                  color="warn"
+                  (click)="quitarHabitacion(habitacion.idHabitacion)"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Lateral Derecho -->
+      <div class="col-md-6">
+        <h4 class="titular">Habitaciones Disponibles</h4>
+        <div class="card card-scrollable">
+          <div *ngFor="let habitacion of HabitacionesDisponibles">
+            <div class="card mb-2" *ngIf="!habitacion.status">
+              <div class="card-body d-flex justify-content-between cardThing">
+                <span> Habitacion: {{ habitacion.numHabitacion }}</span>
+                <button
+                  mat-icon-button
+                  class="add-button"
+                  color="primary"
+                  (click)="anadirHabitacion(habitacion.idHabitacion)"
+                >
+                  <mat-icon>add_circle</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h4 class="titular">Clientes Registrados</h4>
+        <div class="card card-scrollable">
+          <div *ngFor="let cliente of Clientes">
+            <div class="card mb-2" *ngIf="!clienteEnReserva(cliente.idCliente)">
+              <div class="card-body d-flex justify-content-between cardThing">
+                <span>{{ cliente.nombre }} ({{ cliente.idCliente }})</span>
+                <button
+                  mat-icon-button
+                  class="add-button"
+                  color="primary"
+                  (click)="anadirCliente(cliente.idCliente)"
+                >
+                  <mat-icon>add_circle</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mb-3" style="margin-top: 20px">
+    <button mat-raised-button color="accent" (click)="regresar()">
+      Volver
+    </button>
+  </div>
+</div>

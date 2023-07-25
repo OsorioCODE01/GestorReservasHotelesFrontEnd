@@ -1,0 +1,100 @@
+<div class="full-page-container">
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Columna izquierda con la información del hotel -->
+      <div class="col-md-6">
+        <mat-card class="hotel-info-card">
+          <div class="Header-Place">
+            <h2>INFORMACION DEL HOTEL</h2>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="EditarHotel(HotelInfo.idHotel)"
+            >
+              EDITAR INFORMACION
+            </button>
+          </div>
+
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">ID HOTEL:</span>
+            <span class="hotel-info-value">{{ HotelInfo.idHotel }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">NOMBRE:</span>
+            <span class="hotel-info-value">{{ HotelInfo.nombre }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">TELÉFONO:</span>
+            <span class="hotel-info-value">{{ HotelInfo.telefono }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">correo:</span>
+            <span class="hotel-info-value">{{ HotelInfo.correo }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">NÚMERO HABITACIONES:</span>
+            <span class="hotel-info-value">{{
+              HotelInfo.habitaciones.length
+            }}</span>
+          </div>
+          <h3 class="habitaciones-title">HABITACIONES:</h3>
+          <div class="habitaciones-list">
+            <div
+              *ngFor="let item of HotelInfo.habitaciones"
+              [ngClass]="{
+                'habitacion-card': true,
+                disponible: !item.status,
+                'no-disponible': item.status
+              }"
+            >
+              <span class="habitacion-num"> HABITACION: </span>
+              <span class="habitacion-num">{{ item.numHabitacion }}</span>
+              <div>
+                <button
+                  mat-icon-button
+                  color="warn"
+                  type="button"
+                  (click)="EliminarHabitacion(item.idHabitacion)"
+                >
+                  <mat-icon>delete_forever</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+
+      <!-- Columna derecha con el formulario para agregar habitaciones -->
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <mat-card class="habitaciones-card">
+          <h2 class="text-center mb-4">AÑADIR HABITACIÓN</h2>
+          <form [formGroup]="FormHabitacion" (ngSubmit)="AddHabitacion()">
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>Número de Habitación</mat-label>
+                <input type="text" matInput formControlName="numHabitacion" />
+              </mat-form-field>
+            </div>
+            <div class="boton">
+              <button mat-raised-button color="primary" type="submit">
+                Añadir Habitación
+              </button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <!-- Botón de regreso -->
+      <div class="col-md-12 text-center">
+        <button
+          mat-raised-button
+          color="accent"
+          [routerLink]="['/consulta-hoteles']"
+        >
+          Volver
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

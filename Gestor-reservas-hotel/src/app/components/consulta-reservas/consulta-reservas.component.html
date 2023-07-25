@@ -1,0 +1,72 @@
+<div class="full-page-container">
+  <div class="container mt-5" style="padding-top: 5%">
+    <div class="row">
+      <h4>RESERVAS</h4>
+      <hr />
+      <div class="col-md-4" *ngFor="let reserva of Reservas">
+        <mat-card class="hotel-card">
+          <h2 class="text-center mb-4">
+            Reserva en: {{ reserva.idHotel.nombre }}
+          </h2>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">Titular Reserva:</span>
+            <span class="hotel-info-value">{{ reserva.idCliente.nombre }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">Documento Tituar:</span>
+            <span class="hotel-info-value">{{
+              reserva.idCliente.idCliente
+            }}</span>
+            <span class="hotel-info-label">Tipo Documento:</span>
+            <span class="hotel-info-value">{{
+              reserva.idCliente.tipoDocumento
+            }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">Telefono:</span>
+            <span class="hotel-info-value">{{
+              reserva.idCliente.telefono
+            }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">Correo: </span>
+            <span class="hotel-info-value">{{ reserva.idCliente.correo }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">HABITACIONES RESERVADAS:</span>
+            <span class="hotel-info-value">{{
+              reserva.habitaciones.length
+            }}</span>
+          </div>
+          <div class="hotel-info-item">
+            <span class="hotel-info-label">NUM DE HUESPEDES:</span>
+            <span class="hotel-info-value">{{ reserva.clientes.length }}</span>
+          </div>
+          <!-- Puedes agregar más información del hotel aquí según tus necesidades -->
+
+          <div class="ver-mas-button">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="
+                editarReserva(
+                  reserva.idCliente.idCliente,
+                  reserva.idHotel.idHotel
+                )
+              "
+            >
+              Ver Detalles
+            </button>
+            <button
+              mat-raised-button
+              color="warn"
+              (click)="eliminarReserva(reserva.idReserva)"
+            >
+              Borrar
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="full-page-container">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <mat-card class="user-info-card">
+          <div class="edit-container">
+            <button class="edit-button" (click)="editarUsuario()">
+              Editar
+            </button>
+          </div>
+          <h2 class="text-center mb-4 user-info-header">
+            Información del Usuario
+          </h2>
+          <div class="user-info-item">
+            <span class="user-info-label">ID Cliente:</span>
+            <span class="user-info-value">{{ UserInfo.idCliente }}</span>
+          </div>
+          <div class="user-info-item">
+            <span class="user-info-label">Tipo Documento:</span>
+            <span class="user-info-value">{{ UserInfo.tipoDocumento }}</span>
+          </div>
+          <div class="user-info-item">
+            <span class="user-info-label">Nombre:</span>
+            <span class="user-info-value">{{ UserInfo.nombre }}</span>
+          </div>
+          <div class="user-info-item">
+            <span class="user-info-label">Teléfono:</span>
+            <span class="user-info-value">{{ UserInfo.telefono }}</span>
+          </div>
+          <div class="user-info-item">
+            <span class="user-info-label">Correo:</span>
+            <span class="user-info-value">{{ UserInfo.correo }}</span>
+          </div>
+          <div class="user-info-item">
+            <span class="user-info-label">Contraseña:</span>
+            <span class="user-info-value">******</span>
+            <!-- Puedes ocultar la contraseña por motivos de seguridad -->
+          </div>
+          <div class="user-info-item">
+            <span class="user-info-label">Nivel:</span>
+            <span
+              class="user-info-value"
+              [ngClass]="{
+                'admin-level': UserInfo.nivel,
+                'user-level': !UserInfo.nivel
+              }"
+              >{{ UserInfo.nivel ? "Admin" : "User" }}</span
+            >
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

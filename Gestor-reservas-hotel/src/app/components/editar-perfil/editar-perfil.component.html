@@ -1,0 +1,104 @@
+<div class="full-page-container">
+  <div class="container mt-5">
+    <mat-card class="edit-profile-card">
+      <h2 class="text-center mb-4">Editar Perfil</h2>
+      <form [formGroup]="clienteForm" (ngSubmit)="actualizarCliente()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>ID Cliente</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  formControlName="idCliente"
+                  readonly="true"
+                />
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>Tipo documento</mat-label>
+                <mat-select formControlName="tipoDocumento">
+                  <mat-option value="CC">CC</mat-option>
+                  <mat-option value="TI">TI</mat-option>
+                  <mat-option value="CE">CE</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input type="text" matInput formControlName="nombre" />
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>Teléfono</mat-label>
+                <input type="text" matInput formControlName="telefono" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>Correo</mat-label>
+                <input type="text" matInput formControlName="correo" />
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field>
+                <mat-label>Contraseña</mat-label>
+                <input
+                  type="{{ showPassword ? 'text' : 'password' }}"
+                  matInput
+                  formControlName="contrasena"
+                />
+                <button
+                  type="button"
+                  mat-icon-button
+                  matSuffix
+                  (click)="showPassword = !showPassword"
+                >
+                  <mat-icon>{{
+                    showPassword ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="form-group" *ngIf="isAdmin">
+              <mat-form-field>
+                <mat-label>Nivel</mat-label>
+                <mat-select formControlName="nivel">
+                  <mat-option value="true">Admin</mat-option>
+                  <mat-option value="false">User</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100 text-center mt-4">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="clienteForm.invalid"
+          >
+            Actualizar Perfil
+          </button>
+          <div>
+            <button
+              mat-raised-button
+              color="accent"
+              type="button"
+              (click)="Regresar()"
+            >
+              Volver
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
